@@ -51,15 +51,10 @@ class Solution {
             this.timeToFinish = timeToFinish;
         }
 
-
         public static Job of(int startIndex, int progress, int speed) {
             double jobToFinish = (double) (100 - progress) / speed;
-            if (!String.valueOf(jobToFinish).endsWith(".0")) {
-                jobToFinish++;
-            }
-            return new Job(startIndex, (int) jobToFinish);
+            return new Job(startIndex, (int)Math.ceil(jobToFinish));
         }
-
 
         public void decreaseTimeToFinish() {
             if (this.timeToFinish > 0) {
