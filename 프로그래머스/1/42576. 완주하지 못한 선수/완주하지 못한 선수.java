@@ -4,30 +4,24 @@ import java.util.stream.*;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        String answer = "";
+         String answer = "";
 
         Map<String, Integer> participantMap = new HashMap<>();
 
         for (String name : participant) {
-            if (participantMap.containsKey(name)) {
-                participantMap.put(name, participantMap.get(name) + 1);
-            } else {
-                participantMap.put(name, 1);
-            }
+            participantMap.put(name, participantMap.getOrDefault(name, 0) + 1);
         }
 
         for (String s : completion) {
-            if (participantMap.containsKey(s)) {
-                participantMap.put(s, participantMap.get(s) - 1);
-            }
+            participantMap.put(s, participantMap.get(s) - 1);
         }
 
         for (String s : participantMap.keySet()) {
-            if (participantMap.get(s) >= 1) {
+            if (participantMap.get(s) != 0) {
                 answer = s;
             }
         }
-        
+
         return answer;
     }
     
