@@ -6,7 +6,6 @@ class Solution {
         String collect = Arrays.stream(String.valueOf(n).split(""))
                 .sorted(Collections.reverseOrder())
                 .collect(Collectors.joining());
-
         return Long.parseLong(collect);
     }
 }
