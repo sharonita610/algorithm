@@ -5,11 +5,10 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        double a = sc.nextDouble();
-        double b = sc.nextDouble();
+        float a = sc.nextFloat();
+        float b = sc.nextFloat();
 
-
-            System.out.printf("%f", a / b);
-
+        System.out.printf("%f", a / b);
+        sc.close();
     }
 }
